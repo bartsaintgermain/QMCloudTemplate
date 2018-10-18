@@ -3,7 +3,7 @@ param (
 	[Parameter(Mandatory=$true)] [string] $version,
 	[string] $nuspecPath = "project.nuspec")
 
-nuget pack -BasePath $PSScriptRoot $nuspecPath -Version "$version"
+.\nuget.exe pack -BasePath $PSScriptRoot $nuspecPath -Version "$version"
 
 Login-QuamotionCloud -apiKey $quamotionAPIKey
 
